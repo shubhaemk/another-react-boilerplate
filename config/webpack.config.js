@@ -17,10 +17,7 @@ module.exports = {
                 use: {
                     loader: "babel-loader",
                     query: {
-                        presets: [
-                            moduleResolve('@babel/preset-env'),
-                            moduleResolve('@babel/preset-react')
-                        ]
+                        configFile: fileResolve('config/babel.config.js')
                     }
                 }
             },
