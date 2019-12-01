@@ -1,10 +1,19 @@
+/*
+    ToDo
+    1.Add support for following
+        a. SASS
+        b. CSS
+        c. images/music/gif
+    2. minify css/html/js
+    3. Convert it into a function which returns config
+    4. Create different config for production and development
+*/
+
+
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 const {devServer} = require('./webpackDevServer.config');
-const {
-    fileResolve,
-    pathResolve
-} = require('./path');
+const {fileResolve,pathResolve} = require('./path');
 
 module.exports = {
     entry: fileResolve('src/index.js'),
