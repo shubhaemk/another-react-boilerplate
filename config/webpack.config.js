@@ -7,6 +7,7 @@
     2. minify css/html/js
     3. Convert it into a function which returns config
     4. Create different config for production and development
+    5. When a user comes to the website then browser will download the whole bundle file and then render the website. This can slow your website drastically so code splitting allows the generated to split and create multiple outputs. So the browser will load the appropriate bundle when it needs it. In turn improving the site load up time.
 */
 
 
