@@ -3,7 +3,7 @@ const devServer = contentBase => (
         contentBase,
         compress: true,
         port: 0,
-        open: false,
+        open: true,
         hot: true,
         //quiet: true
     }
