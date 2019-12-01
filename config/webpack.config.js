@@ -1,7 +1,10 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
-const devServer = require('./webpackDevServer.config');
-const {fileResolve,moduleResolve,pathResolve} = require('./path');
+const {devServer} = require('./webpackDevServer.config');
+const {
+    fileResolve,
+    pathResolve
+} = require('./path');
 
 module.exports = {
     entry: fileResolve('src/index.js'),
