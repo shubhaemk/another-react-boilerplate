@@ -6,7 +6,7 @@ Cloning this repository (for now!) will get you started with building [React](ht
 ## Try It
 
 * ```git clone https://github.com/shubhaemk/another-react-boilerplate.git your-project-folder```
-* Then change **git origin** & **project name** in package.json.
+* Then change **git origin** to your repository & **project name** in package.json.
 * ```npm install```
 * ```npm run start``` to run
 * ```npm run build``` to create a prooduction build
