@@ -55,6 +55,4 @@ const webpackModule = () => {
     )
 };
 
-module.exports = {
-    webpackModule
-}
+module.exports = webpackModule;
