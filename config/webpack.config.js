@@ -12,10 +12,11 @@
 */
 
 
-const HtmlWebPackPlugin = require("html-webpack-plugin");
 
-const {webpackModule} = require('./webpackConfig/webpackModule.config');
-const {devServer} = require('./webpackConfig/webpackDevServer.config');
+
+const webpackModule = require('./webpackConfig/webpackModule.config');
+const webpackPlugins = require('./webpackConfig/webpackPlugins.config');
+const webpackDevServer = require('./webpackConfig/webpackDevServer.config');
 const {fileResolve,pathResolve} = require('./helper/path');
 
 module.exports = {
@@ -28,11 +29,6 @@ module.exports = {
     resolve: {
         extensions: [".wasm", ".mjs", ".js", ".json", ".jsx"]
     },
-    plugins: [
-        new HtmlWebPackPlugin({
-            template: pathResolve('public/index.html'),
-            filename: "index.html"
-        })
-    ],
-    devServer : devServer(pathResolve('public')),
+    plugins: webpackPlugins(),
+    devServer : webpackDevServer(pathResolve('public')),
 };
