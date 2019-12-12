@@ -1,4 +1,4 @@
-const devServer = contentBase => (
+const webpackDevServer = contentBase => (
     {
         contentBase,
         compress: true,
@@ -9,6 +9,4 @@ const devServer = contentBase => (
     }
 );
 
-module.exports = {
-    devServer
-};
+module.exports = webpackDevServer;
