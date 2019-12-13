@@ -1,5 +1,6 @@
 const { fileResolve, pathResolve } = require('../helper/path');
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+//use minicsextractplugin in production enviornment
 const webpackModule = () => {
     return (
         {
@@ -49,6 +50,29 @@ const webpackModule = () => {
                     test: /\.(ogg|mp3|wav|mpe?g)$/i,
                     use: 'file-loader'
                 },
+                {
+                    test: /\.css$/,
+                    loader: [
+                        MiniCssExtractPlugin.loader,
+                        'css-loader'
+                    ]
+                },
+                {
+                    test: /\.s(a|c)ss$/,
+                    use: [
+                        process.env.NODE_ENV !== 'production' //temp till different config files are not added
+                            ? 
+                            'style-loader'
+                            : {
+                                loader: MiniCssExtractPlugin.loader,
+                                options: {
+                                    publicPath: '../'
+                                }         
+                            }, //adds css to dom
+                        'css-loader',  //css-loader interprets @import and url() like import/require() and will resolve them.
+                        'sass-loader' // s(a|c)ss to css
+                    ]
+                }
                 
             ]
         }
