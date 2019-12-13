@@ -18,10 +18,10 @@ Cloning this repository (for now!) will get you started with building [React](ht
 - [x] JSX -> JS
 - [x] Media bundling
 - [x] Webpack, Babel modular configuration
-- [ ] CSS support
-- [ ] SASS support
-- [ ] Lint support
+- [x] CSS support
+- [x] SASS support
 - [ ] CSS prefixer
-- [ ] LESS support
+- [ ] Different config files for prod,dev
+- [ ] Lint support
 - [ ] Code splitter example in webconfig
 
