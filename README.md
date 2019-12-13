@@ -9,7 +9,7 @@ Cloning this repository (for now!) will get you started with building [React](ht
 * Then change **git origin** to your repository & **project name** in package.json.
 * ```npm install```
 * ```npm run start``` to run
-* ```npm run build``` to create a prooduction build
+* ```npm run build``` to create a production build
 * _Happy Hacking!_
 
 ## Features
