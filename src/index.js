@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 
 import Dummy from './components/dummy/dummy';
 import img from './assets/img.jpg';
-
+import './temp.css';
+import './temp.scss';
 const App = () => {
     return (
         <div>
