@@ -21,4 +21,7 @@ Cloning this repository (for now!) will get you started with building [React](ht
 - [ ] CSS support
 - [ ] SASS support
 - [ ] Lint support
+- [ ] CSS prefixer
+- [ ] LESS support
+- [ ] Code splitter example in webconfig
 
