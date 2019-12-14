@@ -23,9 +23,8 @@ Cloning this repository (for now!) will get you started with building [React](ht
 - [x] CSS support
 - [x] SASS support
 - [x] CSS Minification
-- [ ] CSS Optimised for Mobiles
-- [ ] CSS prefixer
+- [x] CSS prefixer
 - [x] Different configuration files for Production and Development
-- [ ] Lint support
+- [x] Lint support
 - [ ] Vendor Bundling in final build
 
