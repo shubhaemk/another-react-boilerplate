@@ -83,7 +83,8 @@ const webpackDevelopmentConfig = () => {
         plugins: [
             new HtmlWebPackPlugin({
                 template: pathResolve('public/index.html'),
-                filename: 'index.html'
+                filename: 'index.html',
+                favicon: fileResolve('public/favicon.ico')
             })
         ],
         devServer: {
