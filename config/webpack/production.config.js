@@ -112,9 +112,7 @@ const webpackProductionConfig = () => {
                 }
             }
         },
-        stats: {
-            children: false
-        }
+        stats: 'errors-warnings'
     }
 }
 
