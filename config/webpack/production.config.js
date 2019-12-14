@@ -1,4 +1,6 @@
+const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { fileResolve, pathResolve } = require('../helper/path');
 
@@ -8,6 +10,9 @@ const webpackProductionConfig = () => {
         output: {
             path: pathResolve('build'),
             filename: '[name][chunkhash].js', //use hashchunk in prod
+        },
+        optimization: {
+            minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
         },
         module: {
             rules: [
@@ -36,21 +41,10 @@ const webpackProductionConfig = () => {
                             loader: 'file-loader',
                             options: {
                                 outputPath: 'assets',
-                                name: '[path][name].[ext]',
-                                /* name(file) {
-                                    if (process.env.NODE_ENV === 'development') {
-                                        return '[path][name].[ext]';
-                                    }
-                                    return '[contenthash].[ext]';
-                                } */
+                                name: '[contenthash].[ext]',
                             }
                         },
-                        {
-                            loader: 'image-webpack-loader',
-                            options: {
-                                disable: true // Disables on development mode
-                            }
-                        }
+                        'image-webpack-loader',
                     ]
                 },
                 {
@@ -59,9 +53,17 @@ const webpackProductionConfig = () => {
                 },
                 {
                     test: /\.css$/,
-                    loader: [
+                    use: [
                         MiniCssExtractPlugin.loader,
-                        'css-loader'
+                        'css-loader',
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                plugins: () => [require('autoprefixer')({
+                                    'browsersList': ['> 1%', 'last 3 versions']
+                                })],
+                            }
+                        }
                     ]
                 },
                 {
@@ -69,6 +71,14 @@ const webpackProductionConfig = () => {
                     use: [
                         MiniCssExtractPlugin.loader,
                         'css-loader',  //css-loader interprets @import and url() like import/require() and will resolve them.
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                plugins: () => [require('autoprefixer')({
+                                    'browsersList': ['> 1%', 'last 3 versions']
+                                })],
+                            }
+                        },
                         'sass-loader' // s(a|c)ss to css
                     ]
                 }
@@ -84,7 +94,7 @@ const webpackProductionConfig = () => {
                 filename: "index.html"
             }),
             new MiniCssExtractPlugin({
-                filename: '[name].css',
+                filename: '[chunkhash].css',
                 chunkFilename: '[id].css',
             }),
         ],
