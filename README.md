@@ -28,3 +28,9 @@ Cloning this repository (for now!) will get you started with building [React](ht
 - [x] Lint support
 - [x] Vendor Bundling in final build
 
+## Future perspective
+
+* Use it in as many [React](https://reactjs.org/) apps
+* Document those error and fix this
+* Create a start up script like [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html)
+
