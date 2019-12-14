@@ -1,4 +1,3 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { fileResolve, pathResolve } = require('../helper/path');
 
@@ -6,7 +5,7 @@ const webpackDevelopmentConfig = () => {
     return {
         entry: fileResolve('src/index.js'),
         output: {
-            path: pathResolve('build'),
+            path: pathResolve('host'),
             filename: '[name].js',
         },
         module: {
@@ -44,7 +43,7 @@ const webpackDevelopmentConfig = () => {
                             loader: 'file-loader',
                             options: {
                                 outputPath: 'assets',
-                                name: '[path][name].[ext]',
+                                name: '[name].[ext]',
                             }
                         },
                         {
@@ -93,14 +92,16 @@ const webpackDevelopmentConfig = () => {
             port: 0,
             open: true,
             hot: true,
+            stats: 'errors-warnings',
+            watchContentBase: true,
+            //writeToDisk: true, might add this when I will add start up script!
+            //https: true might add this when I will add start up script!
             overlay: {
                 warnings: true,
                 errors: true
             },
         },
-        stats: {
-            children: false
-        }
+        stats: 'errors-warnings'
     }
 }
 
