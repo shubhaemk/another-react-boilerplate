@@ -7,7 +7,7 @@ const webpackDevelopmentConfig = () => {
         entry: fileResolve('src/index.js'),
         output: {
             path: pathResolve('build'),
-            filename: '[name].js', //use hashchunk in prod
+            filename: '[name].js',
         },
         module: {
             rules: [
@@ -37,18 +37,12 @@ const webpackDevelopmentConfig = () => {
                             options: {
                                 outputPath: 'assets',
                                 name: '[path][name].[ext]',
-                                /* name(file) {
-                                    if (process.env.NODE_ENV === 'development') {
-                                        return '[path][name].[ext]';
-                                    }
-                                    return '[contenthash].[ext]';
-                                } */
                             }
                         },
                         {
                             loader: 'image-webpack-loader',
                             options: {
-                                disable: true // Disables on development mode
+                                disable: true
                             }
                         }
                     ]
@@ -68,8 +62,8 @@ const webpackDevelopmentConfig = () => {
                     test: /\.s(a|c)ss$/,
                     use: [
                         'style-loader',
-                        'css-loader',  //css-loader interprets @import and url() like import/require() and will resolve them.
-                        'sass-loader' // s(a|c)ss to css
+                        'css-loader',
+                        'sass-loader'
                     ]
                 }
 
@@ -82,11 +76,7 @@ const webpackDevelopmentConfig = () => {
             new HtmlWebPackPlugin({
                 template: pathResolve('public/index.html'),
                 filename: "index.html"
-            }),
-            new MiniCssExtractPlugin({
-                filename: '[name].css',
-                chunkFilename: '[id].css',
-            }),
+            })
         ],
         devServer: {
             contentBase : pathResolve('public'),
