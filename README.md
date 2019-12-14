@@ -18,6 +18,7 @@ Cloning this repository (for now!) will get you started with building [React](ht
 - [x] JSX -> JS
 - [x] Media bundling
 - [x] Webpack, Babel modular configuration
+- [x] Error Overlay
 - [x] CSS support
 - [x] SASS support
 - [ ] CSS prefixer
