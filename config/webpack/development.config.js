@@ -1,5 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { fileResolve, pathResolve } = require('../helper/path');
 
 const webpackDevelopmentConfig = () => {
@@ -14,18 +14,26 @@ const webpackDevelopmentConfig = () => {
                 {
                     test: /\.jsx?$/,
                     exclude: pathResolve('node_modules'),
-                    use: {
-                        loader: "babel-loader",
-                        query: {
-                            configFile: fileResolve('config/babel.config.js')
+                    use: [
+                        {
+                            loader: 'babel-loader',
+                            query: {
+                                configFile: fileResolve('config/loader/babel.config.js')
+                            }
+                        },
+                        {
+                            loader: 'eslint-loader',
+                            options: {
+                                configFile: fileResolve('config/loader/.eslintrc')
+                            }
                         }
-                    }
+                    ]
                 },
                 {
                     test: /\.html$/,
                     use: [
                         {
-                            loader: "html-loader"
+                            loader: 'html-loader'
                         }
                     ]
                 },
@@ -70,12 +78,12 @@ const webpackDevelopmentConfig = () => {
             ]
         },
         resolve: {
-            extensions: [".wasm", ".mjs", ".js", ".json", ".jsx"]
+            extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx']
         },
         plugins: [
             new HtmlWebPackPlugin({
                 template: pathResolve('public/index.html'),
-                filename: "index.html"
+                filename: 'index.html'
             })
         ],
         devServer: {

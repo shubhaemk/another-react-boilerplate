@@ -22,7 +22,7 @@ const webpackProductionConfig = () => {
                     use: {
                         loader: "babel-loader",
                         query: {
-                            configFile: fileResolve('config/babel.config.js')
+                            configFile: fileResolve('config/loader/babel.config.js')
                         }
                     }
                 },
@@ -70,7 +70,7 @@ const webpackProductionConfig = () => {
                     test: /\.s(a|c)ss$/,
                     use: [
                         MiniCssExtractPlugin.loader,
-                        'css-loader',  //css-loader interprets @import and url() like import/require() and will resolve them.
+                        'css-loader',
                         {
                             loader: 'postcss-loader',
                             options: {
@@ -79,7 +79,7 @@ const webpackProductionConfig = () => {
                                 })],
                             }
                         },
-                        'sass-loader' // s(a|c)ss to css
+                        'sass-loader'
                     ]
                 }
 
@@ -94,8 +94,8 @@ const webpackProductionConfig = () => {
                 filename: "index.html"
             }),
             new MiniCssExtractPlugin({
-                filename: '[chunkhash].css',
-                chunkFilename: '[id].css',
+                filename: '[id][chunkhash].css',
+                chunkFilename: '[id][chunkhash].css',
             }),
         ],
         devServer: {
