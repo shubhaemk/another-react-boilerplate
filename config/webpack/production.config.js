@@ -22,7 +22,8 @@ const webpackProductionConfig = () => {
                     use: {
                         loader: "babel-loader",
                         query: {
-                            configFile: fileResolve('config/loader/babel.config.js')
+                            configFile: fileResolve('config/loader/babel.config.js'),
+                            envName: 'production'
                         }
                     }
                 },

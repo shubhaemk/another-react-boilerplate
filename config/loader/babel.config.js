@@ -1,9 +1,5 @@
 module.exports = function(api) {
-    if (api.env("production")){
-        console.log('---------------------------------------------------------');
-    }else{
-        console.log('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
-    }
+    console.log(api.env());
     return {
         "presets": [
             [
