@@ -1,23 +1,28 @@
-/*
-    ToDo
-    1. Return a function instead
-    2. Configure env to support browsers
-    3. Check for react configuration
-*/ 
-
-module.exports = {
-    presets:[
-        "@babel/preset-env",
-        '@babel/preset-react'
-    ],
-    "plugins": [
-        [
-            "@babel/plugin-proposal-class-properties", 
-            {
-                    "loose": true 
-            }
+module.exports = function(api) {
+    if (api.env("production")){
+        console.log('---------------------------------------------------------');
+    }else{
+        console.log('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
+    }
+    return {
+        "presets": [
+            [
+                "@babel/preset-env",
+                {
+                    "targets": "> 0.25%, not dead"
+                }
+            ],
+            [
+                '@babel/preset-react',
+                {
+                    "development" : api.env("development") 
+                }
+            ]
         ],
-        'transform-react-remove-prop-types'
-    ]
+        "plugins": [
+            "@babel/plugin-proposal-class-properties",
+            'transform-react-remove-prop-types'
+        ]
+    }
 };
 
