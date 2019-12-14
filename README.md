@@ -31,6 +31,6 @@ Cloning this repository (for now!) will get you started with building [React](ht
 ## Future
 
 * Use it in as many [React](https://reactjs.org/) apps
-* Document those error and fix this
+* Document error if any and fix them
 * Create a start up script like [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html)
 
