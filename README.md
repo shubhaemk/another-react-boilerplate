@@ -16,13 +16,16 @@ Cloning this repository (for now!) will get you started with building [React](ht
 
 - [x] ES6+ -> ES5
 - [x] JSX -> JS
+- [x] HMR
 - [x] Media bundling
 - [x] Webpack, Babel modular configuration
 - [x] Error Overlay
 - [x] CSS support
 - [x] SASS support
+- [x] CSS Minification
+- [ ] CSS Optimised for Mobiles
 - [ ] CSS prefixer
-- [ ] Different config files for prod,dev
+- [x] Different configuration files for Production and Development
 - [ ] Lint support
-- [ ] Code splitter example in webconfig
+- [ ] Vendor Bundling in final build
 
