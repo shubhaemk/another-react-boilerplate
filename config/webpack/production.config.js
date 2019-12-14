@@ -91,23 +91,26 @@ const webpackProductionConfig = () => {
         plugins: [
             new HtmlWebPackPlugin({
                 template: pathResolve('public/index.html'),
-                filename: "index.html"
+                filename: "index.html",
+                favicon: fileResolve('public/favicon.ico')
             }),
             new MiniCssExtractPlugin({
                 filename: '[id][chunkhash].css',
                 chunkFilename: '[id][chunkhash].css',
             }),
         ],
-        devServer: {
-            contentBase: pathResolve('public'),
-            compress: true,
-            port: 0,
-            open: true,
-            hot: true,
-            overlay: {
-                warnings: true,
-                errors: true
-            },
+        optimization: {
+            runtimeChunk: 'single',
+            splitChunks: {
+                cacheGroups: {
+                    vendors: {
+                        test: /[\\/]node_modules[\\/]/,
+                        name: 'vendors',
+                        enforce: true,
+                        chunks: 'all'
+                    }
+                }
+            }
         },
         stats: {
             children: false
