@@ -26,5 +26,5 @@ Cloning this repository (for now!) will get you started with building [React](ht
 - [x] CSS prefixer
 - [x] Different configuration files for Production and Development
 - [x] Lint support
-- [ ] Vendor Bundling in final build
+- [x] Vendor Bundling in final build
 
