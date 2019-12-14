@@ -1,0 +1,32 @@
+body{
+    background-color: #f4f4f4;
+    color: #232020;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.welcome{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    font-size: 2rem;
+
+    &>*{
+        text-align: center;
+    }
+    &__title{
+        width: 100%;
+        font-size: 4rem;
+        font-weight: 700;
+    }
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__links{
+        display: flex;
+        flex-direction: column;
+    }
+}
