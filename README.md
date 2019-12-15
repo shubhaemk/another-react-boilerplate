@@ -6,7 +6,7 @@ Cloning this repository (for now!) will get you started with building [React](ht
 
 [![License: MIT](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/shubhaemk/another-react-boilerplate/blob/master/LICENSE) 
 [![David](https://david-dm.org/shubhaemk/another-react-boilerplate.svg)](https://david-dm.org/shubhaemk/another-react-boilerplate?type=dev)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/shubhaemk/another-react-boilerplate)
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/shubhaemk/another-react-boilerplate)
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://twitter.com/shubham_kamath)
 
