@@ -14,7 +14,7 @@ module.exports = function(env,argv) {
     printEmpty();
     
     if(argv.mode === 'production'){
-        return webpackProductionConfig();
+        return webpackProductionConfig(argv.deployFolder);
     }else{
         return webpackDevelopmentConfig();
     }
