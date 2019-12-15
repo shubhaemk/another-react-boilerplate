@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { printMessage, printEmpty, printInfo } = require('../helper/console.messages');
 
 const { 
     pathResolve,
@@ -11,12 +12,19 @@ const {
     assetsFolder,
     publicFolder,
     indexHtmlFile,
-    faviconFile 
+    faviconFile,
+    srcFolder,
+    loaderFolder,
+    webpackFolder
 } = require('../helper/path');
 
 const webpackDevelopmentConfig = () => {
+
+    printMessage(`Content is hosted from a hidden folder - ${pathResolve(hostFolder)}`);
+    printMessage(`To see hosted files in your directory, un-comment devServer's writeToDisk flag in development.config.js located at ${pathResolve(webpackFolder)}`);
+    
     return {
-        entry: pathResolve(indexJsFile),
+        entry: pathResolve(srcFolder, indexJsFile),
         output: {
             path: pathResolve(hostFolder),
             filename: '[name].js',
@@ -30,13 +38,13 @@ const webpackDevelopmentConfig = () => {
                         {
                             loader: 'babel-loader',
                             query: {
-                                configFile: pathResolve(babelConfigFile)
+                                configFile: pathResolve(loaderFolder, babelConfigFile)
                             }
                         },
                         {
                             loader: 'eslint-loader',
                             options: {
-                                configFile: pathResolve(eslintConfigFile)
+                                configFile: pathResolve(loaderFolder, eslintConfigFile)
                             }
                         }
                     ]
