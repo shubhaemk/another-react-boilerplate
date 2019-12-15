@@ -4,7 +4,7 @@ const pathResolve = (...relativePath) => path.resolve(...relativePath);
 //development
 const hostFolder = 'host';
 //production
-const buildFolder = 'docs';
+const buildFolder = 'build';
 //common
 const srcFolder = 'src';
 const loaderFolder = 'config/loader';
