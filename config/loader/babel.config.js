@@ -1,11 +1,15 @@
+const chalk = require('chalk');
+const envTarget = "> 0.25%, not dead";
+
 module.exports = function(api) {
-    console.log(api.env());
+    console.log(`${chalk.red('ℹ')} ${chalk.white.dim('｢arb｣')}: Transpiling using Babel`);
+    console.log(`${chalk.red('ℹ')} ${chalk.white.dim('｢arb｣')}: Targetting browsers ${envTarget}`);
     return {
         "presets": [
             [
                 "@babel/preset-env",
                 {
-                    "targets": "> 0.25%, not dead"
+                    "targets": envTarget
                 }
             ],
             [
