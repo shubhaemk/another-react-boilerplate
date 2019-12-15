@@ -3,22 +3,31 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { printMessage } = require('../helper/console.messages');
+
 const {
     pathResolve,
     indexJsFile,
     buildFolder,
     nodeModulesFolder,
     babelConfigFile,
-    eslintConfigFile,
     assetsFolder,
     publicFolder,
     indexHtmlFile,
-    faviconFile
+    faviconFile,
+    loaderFolder,
+    srcFolder
 } = require('../helper/path');
 
 const webpackProductionConfig = () => {
+
+    printMessage(`Production build started from ${indexJsFile} in - ${pathResolve(srcFolder)}`);
+    printMessage(`Pulling ${indexHtmlFile} & ${faviconFile} from - ${pathResolve(publicFolder)}`);
+    printMessage(`Final build will be located at - ${pathResolve(buildFolder)}`);
+    printMessage(`Any assets compiled will be located in - ${pathResolve(buildFolder,assetsFolder)}`);
+
     return {
-        entry: pathResolve(indexJsFile),
+        entry: pathResolve(srcFolder, indexJsFile),
         output: {
             path: pathResolve(buildFolder),
             filename: '[name][chunkhash].js', //use hashchunk in prod
@@ -34,7 +43,7 @@ const webpackProductionConfig = () => {
                     use: {
                         loader: "babel-loader",
                         query: {
-                            configFile: pathResolve(babelConfigFile),
+                            configFile: pathResolve(loaderFolder, babelConfigFile),
                             envName: 'production'
                         }
                     }
