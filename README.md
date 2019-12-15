@@ -38,7 +38,7 @@ Cloning this repository (for now!) will get you started with building [React](ht
 * Go to your repository -> Settings -> GitHub Pages -> Source
 * Select docs option from the dropdown
 * A link will be generated which will be activated after few minutes
-* If it still does not work, Select None option in Source dropdown and then again docs option
+* If it still does not work, Select None option in Source dropdown and then docs option again
 * _Happy Hacking!_
 
 ## FAQ :astonished:
