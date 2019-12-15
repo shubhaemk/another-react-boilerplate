@@ -6,10 +6,13 @@ const hostFolder = 'host';
 //production
 const buildFolder = 'build';
 //common
-const indexJsFile = 'src/index.js';
+const srcFolder = 'src';
+const loaderFolder = 'config/loader';
+const webpackFolder = 'config/webpack';
+const indexJsFile = 'index.js';
 const nodeModulesFolder = 'node_modules';
-const babelConfigFile = 'config/loader/babel.config.js';
-const eslintConfigFile = 'config/loader/.eslintrc';
+const babelConfigFile = 'babel.config.js';
+const eslintConfigFile = '.eslintrc';
 const assetsFolder = 'assets';
 const publicFolder = 'public';
 const indexHtmlFile = 'index.html';
@@ -17,6 +20,9 @@ const faviconFile = 'favicon.ico';
 
 
 module.exports = {
+    srcFolder,
+    loaderFolder,
+    webpackFolder,
     pathResolve,
     indexJsFile,
     hostFolder,
