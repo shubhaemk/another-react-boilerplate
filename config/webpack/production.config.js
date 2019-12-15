@@ -19,17 +19,19 @@ const {
     srcFolder
 } = require('../helper/path');
 
-const webpackProductionConfig = () => {
+const webpackProductionConfig = (deployFolder) => {
+    
+    const outputFolder = deployFolder ? deployFolder : buildFolder;
 
     printMessage(`Production build started from ${indexJsFile} in - ${pathResolve(srcFolder)}`);
     printMessage(`Pulling ${indexHtmlFile} & ${faviconFile} from - ${pathResolve(publicFolder)}`);
-    printMessage(`Final build will be located at - ${pathResolve(buildFolder)}`);
-    printMessage(`Any assets compiled will be located in - ${pathResolve(buildFolder,assetsFolder)}`);
+    printMessage(`Final build will be located at - ${pathResolve(outputFolder)}`);
+    printMessage(`Any assets compiled will be located in - ${pathResolve(outputFolder,assetsFolder)}`);
 
     return {
         entry: pathResolve(srcFolder, indexJsFile),
         output: {
-            path: pathResolve(buildFolder),
+            path: pathResolve(outputFolder),
             filename: '[name][chunkhash].js', //use hashchunk in prod
         },
         optimization: {
