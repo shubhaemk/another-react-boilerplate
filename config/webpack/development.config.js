@@ -1,29 +1,42 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const { fileResolve, pathResolve } = require('../helper/path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+const { 
+    pathResolve,
+    indexJsFile,
+    hostFolder,
+    nodeModulesFolder,
+    babelConfigFile,
+    eslintConfigFile,
+    assetsFolder,
+    publicFolder,
+    indexHtmlFile,
+    faviconFile 
+} = require('../helper/path');
 
 const webpackDevelopmentConfig = () => {
     return {
-        entry: fileResolve('src/index.js'),
+        entry: pathResolve(indexJsFile),
         output: {
-            path: pathResolve('host'),
+            path: pathResolve(hostFolder),
             filename: '[name].js',
         },
         module: {
             rules: [
                 {
                     test: /\.jsx?$/,
-                    exclude: pathResolve('node_modules'),
+                    exclude: pathResolve(nodeModulesFolder),
                     use: [
                         {
                             loader: 'babel-loader',
                             query: {
-                                configFile: fileResolve('config/loader/babel.config.js')
+                                configFile: pathResolve(babelConfigFile)
                             }
                         },
                         {
                             loader: 'eslint-loader',
                             options: {
-                                configFile: fileResolve('config/loader/.eslintrc')
+                                configFile: pathResolve(eslintConfigFile)
                             }
                         }
                     ]
@@ -42,7 +55,7 @@ const webpackDevelopmentConfig = () => {
                         {
                             loader: 'file-loader',
                             options: {
-                                outputPath: 'assets',
+                                outputPath: assetsFolder,
                                 name: '[name].[ext]',
                             }
                         },
@@ -80,22 +93,24 @@ const webpackDevelopmentConfig = () => {
             extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx']
         },
         plugins: [
+            new CleanWebpackPlugin(),
             new HtmlWebPackPlugin({
-                template: pathResolve('public/index.html'),
-                filename: 'index.html',
-                favicon: fileResolve('public/favicon.ico')
+                template: pathResolve(publicFolder,indexHtmlFile),
+                filename: indexHtmlFile,
+                favicon: pathResolve(publicFolder,faviconFile)
             })
         ],
         devServer: {
-            contentBase : pathResolve('public'),
+            contentBase : pathResolve(publicFolder),
             compress: true,
             port: 0,
             open: true,
             hot: true,
             stats: 'errors-warnings',
             watchContentBase: true,
-            //writeToDisk: true, might add this when I will add start up script!
-            //https: true might add this when I will add start up script!
+            //might add this when I will add start up script!
+            //writeToDisk: true, 
+            //https: true
             overlay: {
                 warnings: true,
                 errors: true

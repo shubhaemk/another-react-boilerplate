@@ -2,13 +2,25 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const { fileResolve, pathResolve } = require('../helper/path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {
+    pathResolve,
+    indexJsFile,
+    buildFolder,
+    nodeModulesFolder,
+    babelConfigFile,
+    eslintConfigFile,
+    assetsFolder,
+    publicFolder,
+    indexHtmlFile,
+    faviconFile
+} = require('../helper/path');
 
 const webpackProductionConfig = () => {
     return {
-        entry: fileResolve('src/index.js'),
+        entry: pathResolve(indexJsFile),
         output: {
-            path: pathResolve('build'),
+            path: pathResolve(buildFolder),
             filename: '[name][chunkhash].js', //use hashchunk in prod
         },
         optimization: {
@@ -18,11 +30,11 @@ const webpackProductionConfig = () => {
             rules: [
                 {
                     test: /\.jsx?$/,
-                    exclude: pathResolve('node_modules'),
+                    exclude: pathResolve(nodeModulesFolder),
                     use: {
                         loader: "babel-loader",
                         query: {
-                            configFile: fileResolve('config/loader/babel.config.js'),
+                            configFile: pathResolve(babelConfigFile),
                             envName: 'production'
                         }
                     }
@@ -41,7 +53,7 @@ const webpackProductionConfig = () => {
                         {
                             loader: 'file-loader',
                             options: {
-                                outputPath: 'assets',
+                                outputPath: assetsFolder,
                                 name: '[contenthash].[ext]',
                             }
                         },
@@ -90,10 +102,19 @@ const webpackProductionConfig = () => {
             extensions: [".wasm", ".mjs", ".js", ".json", ".jsx"]
         },
         plugins: [
+            new CleanWebpackPlugin(),
             new HtmlWebPackPlugin({
-                template: pathResolve('public/index.html'),
-                filename: "index.html",
-                favicon: fileResolve('public/favicon.ico')
+                template: pathResolve(publicFolder,indexHtmlFile),
+                filename: indexHtmlFile,
+                favicon: pathResolve(publicFolder,faviconFile),
+                minify: {
+                    collapseWhitespace: true,
+                    removeComments: true,
+                    removeRedundantAttributes: true,
+                    removeScriptTypeAttributes: true,
+                    removeStyleLinkTypeAttributes: true,
+                    useShortDoctype: true
+                }
             }),
             new MiniCssExtractPlugin({
                 filename: '[id][chunkhash].css',
