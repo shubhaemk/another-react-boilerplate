@@ -1,4 +1,6 @@
 # Another React Boilerplate
+[![David](https://david-dm.org/shubhaemk/another-react-boilerplate.svg)](https://david-dm.org/shubhaemk/another-react-boilerplate?type=dev)
+
 ![Header-GIF](https://media.giphy.com/media/l0HlQ7LRalQqdWfao/giphy.gif)
 
 Cloning this repository (for now!) will get you started with building [React](https://reactjs.org/) projects faster.
