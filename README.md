@@ -31,9 +31,9 @@ Cloning this repository (for now!) will get you started with building [React](ht
 - [x] Vendor Bundling in final build
 - [x] Deployable build to GitHub using docs option. Guide below!
 
-## Deploy :cloud:
+## Deploy :cloud: 
 <br/><br/>
-<br/><br/>
+
 * ```npm run deploy``` will create a docs folder in application directory with a build
 * Commit and push those changes to GitHub
 * Go to your repository -> Settings -> GitHub Pages -> Source
