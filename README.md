@@ -3,10 +3,10 @@
 
 Cloning this repository (for now!) will get you started with building [React](https://reactjs.org/) projects faster.
 
-## Try It
+## Try It :yum:
 
 * ```git clone https://github.com/shubhaemk/another-react-boilerplate.git your-project-folder```
-* Then change **git origin** to your repository, **project name** and **author name** in package.json.
+* Then change **git origin** to your repository, **project name** and **author name** in package.json
 * ```npm install```
 * ```npm run start``` to run
 * ```npm run build``` to create a production build
@@ -14,7 +14,7 @@ Cloning this repository (for now!) will get you started with building [React](ht
 * Clean up ```src/app.jsx``` once everything is up!
 * _Happy Hacking!_
 
-## Features
+## Features :fire:
 
 - [x] ES6+ -> ES5
 - [x] JSX -> JS
@@ -31,7 +31,7 @@ Cloning this repository (for now!) will get you started with building [React](ht
 - [x] Vendor Bundling in final build
 - [x] Deployable build to GitHub using docs option. Guide below!
 
-## Deploy
+## Deploy :cloud:
 
 * ```npm run deploy``` will create a docs folder in application directory with a build
 * Commit and push those changes to GitHub
@@ -41,12 +41,12 @@ Cloning this repository (for now!) will get you started with building [React](ht
 * If it still does not work, Select None option in Source dropdown and then again docs option
 * _Happy Hacking!_
 
-## FAQ
+## FAQ :astonished:
 
 * Why is final build folder in .gitignore?
 > If you're using GitHub for deployment, you'll use /docs to deploy( mostly ), so to avoid repetition it's in .gitignore but feel free to remove it!
 
-## Future
+## Future :star:
 
 * Use it in as many [React](https://reactjs.org/) apps
 * Document error if any and fix them
