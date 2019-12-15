@@ -14,8 +14,8 @@ Cloning this repository (for now!) will get you started with building [React](ht
 * Clean up ```src/app.jsx``` once everything is up!
 * _Happy Hacking!_
 
-## Features :fire:
-\
+## Features :fire:\
+
 - [x] ES6+ -> ES5
 - [x] JSX -> JS
 - [x] HMR
