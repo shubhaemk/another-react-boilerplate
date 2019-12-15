@@ -4,7 +4,7 @@
 
 Cloning this repository (for now!) will get you started with building [React](https://reactjs.org/) projects faster.
 
-[![David](https://david-dm.org/shubhaemk/another-react-boilerplate.svg)](https://david-dm.org/shubhaemk/another-react-boilerplate?type=dev)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/shubhaemk/another-react-boilerplate/blob/master/LICENSE) [![David](https://david-dm.org/shubhaemk/another-react-boilerplate.svg)](https://david-dm.org/shubhaemk/another-react-boilerplate?type=dev)
 
 ## Try It :yum:
 
