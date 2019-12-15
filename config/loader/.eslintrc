@@ -8,7 +8,9 @@
         "eslint:recommended",
         "plugin:react/recommended"
     ],
-    "rules": {},
+    "rules": {
+        "semi": "error"
+    },
     "settings": {
         "react": {
             "createClass": "createReactClass",
