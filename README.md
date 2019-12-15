@@ -15,7 +15,7 @@ Cloning this repository (for now!) will get you started with building [React](ht
 * _Happy Hacking!_
 
 ## Features :fire:
-
+\
 - [x] ES6+ -> ES5
 - [x] JSX -> JS
 - [x] HMR
