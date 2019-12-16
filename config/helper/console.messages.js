@@ -10,11 +10,18 @@ const printMessage = (message) => {
     console.log(`${chalk.red('ℹ')} ${chalk.white.dim('｢arb｣')}: ${message}`);
 }
 
+const clearConsole = () => {
+    process.stdout.write(
+        process.platform === 'win32' ? '\x1B[2J\x1B[0f' : '\x1B[2J\x1B[3J\x1B[H'
+    );
+}
+
 const printEmpty = () => console.log();
 
 module.exports = {
     printTitle,
     printInfo,
     printMessage,
-    printEmpty
+    printEmpty,
+    clearConsole
 }

@@ -1,9 +1,10 @@
 const webpackProductionConfig = require('./webpack/production.config.js');
 const webpackDevelopmentConfig = require('./webpack/development.config.js');
-const { printEmpty, printTitle, printInfo, printMessage } = require('./helper/console.messages.js');
+const { printEmpty, printTitle, printInfo, clearConsole } = require('./helper/console.messages.js');
 const { webpackFolder, loaderFolder, pathResolve } = require('./helper/path');
 
 module.exports = function(env,argv) {
+    clearConsole();
     printTitle(argv.mode);
     printEmpty();
     printInfo('Author ->', 'Shubham Kamath');
