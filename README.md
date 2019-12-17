@@ -52,6 +52,9 @@ Cloning this repository (for now!) will get you started with building [React](ht
 * Why is final build folder in .gitignore?
 > If you're using GitHub for deployment, you'll use /docs to deploy( mostly ), so to avoid repetition it's in .gitignore but feel free to remove it!
 
+* Why not deploy it using gh-pages?
+> Deploying via gh-pages required me to go beyond the scope of this project, using docs it's easier.
+
 ## Future :star:
 
 * Use it in as many [React](https://reactjs.org/) apps
